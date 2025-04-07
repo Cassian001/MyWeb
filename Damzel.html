@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color:#f9f9f9;
+    color: #333;
+    background-image:url('pic2.jpg');
+    background-repeat:no repeat;
+    background-size:cover;
+}
+.header {
+    background-color:black;
+    padding: 20px 20px;
+    width:500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 200;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.logo i {
+    margin-right: 10px;
+    color:white;
+}
+
+.search-bar {
+    display: flex;
+    flex-grow: 1;
+    max-width: 600px;
+    margin: 0 20px;
+}
+
+.search-bar input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 2px 0 0 2px;
+    font-size: 1rem;
+}
+
+.search-bar button {
+    background-color: #f8f8f8;
+    border: 1px solid #ccc;
+    border-left: none;
+    padding: 10px 15px;
+    border-radius: 0 2px 2px 0;
+    cursor: pointer;
+}
+
+.search-bar button i {
+    color: #777;
+}
+
+.user-actions {
+    display: flex;
+    align-items: center;
+}
+
+.user-actions button {
+    background: none;
+    border: none;
+    padding: 8px 12px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #f9f9f9;
+}
+
+.user-actions button i {
+    margin-right: 5px;
+}
+
+.profile-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 30%;
+    background-color: #ccc;
+    border:solid 3px green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.profile-icon.small {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+}
+.sidebar {
+    width: 220px;
+    background-color: #fff;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    bottom: 0;
+    padding-top: 20px;
+    box-shadow: 1px 0 5px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+}
+ul{
+    list-style-type:none;
+    padding:0px 15px;
+    margin:2px;
+    margin-top:10px;
+    background-color:white;
+    overflow:hidden;
+    width:500px;
+    background-color:grey;
+  }
+  li{
+    float:left;
+  }
+  li a{
+    display:block;
+    color:white;
+    text-align:center;
+    padding:14px 19px;
+    text-decoration:none;
+    margin-right:15px;
+  }
+  li a:hover{
+    background-color:#333;
+    font-size:20px;
+    border-radius:10px;
+    border: double 2px blue;
+    transition-duration:.5s;
+  }
+.main-content {
+    padding:20px 70px;
+    width:400px;
+    justify-content:center;
+}
+.div2{
+    height:130px;
+    width:200px;
+    border-radius:20px;
+    background-color:white;
+    margin-top:10px;
+    padding:0px 70px;
+  }
+.profile-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 30%;
+    background-color: #ccc;
+    border:solid 3px green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.profile-icon.small {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+}
+.channel-name,
+.views-date {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 3px;
+}
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .video-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .search-bar {
+        margin: 0 10px;
+    }
+
+    .user-actions button {
+        margin-left: 5px;
+        padding: 5px 8px;
+    }
+}
+
+.footer{
+    background-color: black;
+    text-align: center;
+    color: red;
+    font-size: 15px;
+    margin-top: 5px;
+    padding: 5px 20px;
+    width:500px;
+ }
+.red{
+  height:700px;
+  background-color:white;
+  padding:2px 30px;
+  
+}
+h4{
+  text-align:center;
+  font-family: sans-serif;
+  font-size: 30px;
+}
+p{
+  font-family: sans-serif;
+}
+
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyTube</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    </head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <i class="fa-brands fa-youtube"></i>
+            <span>MyWeb</span>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search">
+            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+        <div class="user-actions">
+            <button><i class="fa-solid fa-video" href=""></i> Upload</button>
+            <button><i class="fa-solid fa-bell" href=""></i></button>
+            <div>
+                <span><img class="profile-icon" src="1.jpg"></span> </div>
+        </div>
+    </header>
+    
+        <ul>
+            <li><a href="Denzel.html">Home</a></li>
+            <li><a href="Germs.html">Library</a></li>
+            <li><a href="Damzel.html">About</a></li>
+            <li><a href="Login.html">login</a></li>
+        </ul>
+
+    <main class="main-content">
+        <div>
+          <div class="red">
+  <div>
+    <img src="IMG_20250406_215004.jpg" class="div2">
+    <h4>What is this website?</h4>
+    <p>
+     A website is a collection of related web pages, images, videos, and other digital content hosted on a server and accessible via the internet. Think of it like a virtual storefront or a digital brochure that can be accessed from anywhere in the world.
+
+Websites can be used for a wide range of purposes, such as:
+
+- Sharing information or news
+- Selling products or services
+- Providing entertainment, like games or videos
+- Offering online services, like banking or education
+- Connecting people through social media or forums
+
+Websites typically have a unique address, known as a URL (Uniform Resource Locator), which allows users to access them through a web browser like Google Chrome, Mozilla Firefox, or Safari. When you enter a URL or click on a link, your browser sends a request to the website's server, and the server responds by sending the requested content back to your browser, which then displays it on your screen.
+
+Some common features of websites include:
+
+- Homepages: The main entry point of a website, often featuring an overview of the site's content or purpose.
+- Navigation menus: A way to explore the site's different sections or pages.
+- Content sections: Areas of the site dedicated to specific topics or types of content, such as blog posts, product descriptions, or FAQs.
+- Interactive elements: Features like forms, search bars, or chat windows that allow users to engage with the site or its owners.
+
+Websites can be static, meaning their content doesn't change frequently, or dynamic, meaning their content is updated regularly or generated on the fly based on user interactions.
+
+This Website is only a based design test content and for school purpose only.
+    </p>
+  </div>
+</div>
+</div>
+    </main>
+   
+    <div class="footer">&copy;>>-o->by Molin<-0-<</div>
+  
+    
+
+ 
+</body>
+</html>

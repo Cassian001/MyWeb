@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color:#f9f9f9;
+    color: #333;
+    background-image:url('pic2.jpg');
+    background-repeat:no repeat;
+    background-size:cover;
+}
+.header {
+    background-color:black;
+    padding: 20px 20px;
+    width:500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 200;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.logo i {
+    margin-right: 10px;
+    color:white;
+}
+
+.search-bar {
+    display: flex;
+    flex-grow: 1;
+    max-width: 600px;
+    margin: 0 20px;
+}
+
+.search-bar input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 2px 0 0 2px;
+    font-size: 1rem;
+}
+
+.search-bar button {
+    background-color: #f8f8f8;
+    border: 1px solid #ccc;
+    border-left: none;
+    padding: 10px 15px;
+    border-radius: 0 2px 2px 0;
+    cursor: pointer;
+}
+
+.search-bar button i {
+    color: #777;
+}
+
+.user-actions {
+    display: flex;
+    align-items: center;
+}
+
+.user-actions button {
+    background: none;
+    border: none;
+    padding: 8px 12px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #f9f9f9;
+}
+
+.user-actions button i {
+    margin-right: 5px;
+}
+
+.profile-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 30%;
+    background-color: #ccc;
+    border:solid 3px green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.profile-icon.small {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+}
+.sidebar {
+    width: 220px;
+    background-color: #fff;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    bottom: 0;
+    padding-top: 20px;
+    box-shadow: 1px 0 5px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+}
+ul{
+    list-style-type:none;
+    padding:0px 15px;
+    margin:2px;
+    margin-top:10px;
+    background-color:white;
+    overflow:hidden;
+    width:500px;
+    background-color:grey;
+  }
+  li{
+    float:left;
+  }
+  li a{
+    display:block;
+    color:white;
+    text-align:center;
+    padding:14px 19px;
+    text-decoration:none;
+    margin-right:15px;
+  }
+  li a:hover{
+    background-color:#333;
+    font-size:20px;
+    border-radius:10px;
+    border: double 2px blue;
+    transition-duration:.5s;
+  }
+.main-content {
+    padding:20px 70px;
+    width:400px;
+    justify-content:center;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.video-item {
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.thumbnail {
+    position: relative;
+    overflow: hidden;
+}
+
+.thumbnail img {
+    width: 100%;
+    display: block;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.video-duration {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 3px 5px;
+    border-radius: 3px;
+    font-size: 0.8rem;
+}
+
+.video-info {
+    padding: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.channel-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    background-color:#333;
+}
+
+.profile-icon.small {
+    width: 100%;
+    height: 100%;
+    background-color:#333;
+}
+
+.video-details {
+    flex-grow: 1;
+    background-color:;
+}
+
+.video-title {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    line-height: 1.4;
+}
+
+.channel-name,
+.views-date {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 3px;
+}
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .video-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .search-bar {
+        margin: 0 10px;
+    }
+
+    .user-actions button {
+        margin-left: 5px;
+        padding: 5px 8px;
+    }
+}
+
+.footer{
+    background-color: black;
+    text-align: center;
+    color: red;
+    font-size: 15px;
+    margin-top: 5px;
+    padding: 5px 20px;
+    width:500px;
+ }
+.play{
+    border-radius: 20px;
+    background-color: grey;
+    color:white;
+    padding:5px 20px;
+    margin:20px 5px;
+ }
+
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyTube</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    </head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <i class="fa-brands fa-youtube"></i>
+            <span>MyWeb</span>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search">
+            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+        <div class="user-actions">
+            <button><i class="fa-solid fa-video" href=""></i> Upload</button>
+            <button><i class="fa-solid fa-bell" href=""></i></button>
+            <div>
+                <span><img class="profile-icon" src="1.jpg"></span> </div>
+        </div>
+    </header>
+    
+        <ul>
+            <li><a href="Danzel.html">Home</a></li>
+            <li><a href="Germs.html">Library</a></li>
+            <li><a href="Damzel.html">About</a></li>
+            <li><a href="Login.html">login</a></li>
+        </ul>
+
+    <main class="main-content">
+        <div class="video-grid">
+            <div class="video-item">
+                <div class="thumbnail">
+                    <img src="11.jpg" alt="Video Thumbnail">
+                    <span class="video-duration">10:30</span>
+                    <button class="play">Play</button>
+                </div>
+                <div class="video-info">
+                    <div class="channel-icon">
+                        <div class="profile-icon small">C</div>
+                    </div>
+                    <div class="video-details">
+                        <h3 class="video-title">Amazing Nature Scenery</h3>
+                        <p class="channel-name">Nature Wonders</p>
+                        <p class="views-date">1.2M views • 3 months ago</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-item">
+                <div class="thumbnail">
+                    <img src="Screenshot_20220929_202129.jpg" alt="Video Thumbnail">
+                    <span class="video-duration">5:45</span>
+                    <button class="play">Play</button>
+                </div>
+                <div class="video-info">
+                    <div class="channel-icon">
+                        <div class="profile-icon small">G</div>
+                    </div>
+                    <div class="video-details">
+                        <h3 class="video-title">Delicious Recipe Tutorial</h3>
+                        <p class="channel-name">Cooking Guide</p>
+                        <p class="views-date">500K views • 1 week ago</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-item">
+                <div class="thumbnail">
+                    <img src="Screenshot_20220716_192423.jpg" alt="Video Thumbnail">
+                    <span class="video-duration">8:12</span>
+                    <button class="play">Play</button>
+                </div>
+                <div class="video-info">
+                    <div class="channel-icon">
+                        <div class="profile-icon small">T</div>
+                    </div>
+                    <div class="video-details">
+                        <h3 class="video-title">How Big is the Universe</h3>
+                        <p class="channel-name">The Galaxy</p>
+                        <p class="views-date">800K views • 2 weeks ago</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-item">
+                <div class="thumbnail">
+                    <img src="14.jpg" alt="Video Thumbnail">
+                    <span class="video-duration">12:55</span>
+                    <button class="play">Play</button>
+                </div>
+                <div class="video-info">
+                    <div class="channel-icon">
+                        <div class="profile-icon small">M</div>
+                    </div>
+                    <div class="video-details">
+                        <h3 class="video-title">Travel Vlog: Exploring Asia</h3>
+                        <p class="channel-name">Wanderlust Adventures</p>
+                        <p class="views-date">350K views • 1 month ago</p>
+                    </div>
+                  </div>
+               </div>
+        </div>
+    </main>
+   
+    <div class="footer">&copy;>>-o->by Molin<-0-<</div>
+  
+    
+
+ 
+</body>
+</html>
